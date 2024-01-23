@@ -4,7 +4,9 @@ const fs = require('fs');
 const absolutePath = path.join(folder, 'files');
 const newFolderPath = path.join(folder, 'files-copy');
 
-
+fs.mkdir(newFolderPath, () => {
+  console.log('files-copy folder was created');
+});
 
 function createFolder() {
   fs.readdir(newFolderPath, (err, files) => {
@@ -21,9 +23,6 @@ function createFolder() {
       })
       });
     })
-  fs.mkdir(newFolderPath, () => {
-    console.log('files-copy folder was created');
-  });
 }
 
 createFolder();
