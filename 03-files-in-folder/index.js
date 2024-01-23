@@ -15,9 +15,13 @@ function readDirectory() {
           console.log(err);
         }
         if (stats.isFile()) {
+          let eachFileName;
           let eachFileExtension = path.extname(eachPathToFile);
-          let eachFileName = file.split('.')[0];
           let eachFileSize = stats.size;
+          eachFileName = file.split('.')[0];
+          if(file.charAt(0) === '.') {
+            eachFileName = file.split('.')[1];
+          }
           console.log(
             eachFileName +
               ' - ' +
