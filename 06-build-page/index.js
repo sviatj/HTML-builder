@@ -27,9 +27,6 @@ const readArticles = fs.createReadStream(
   path.join(componentsPath, 'articles.html'),
 );
 
-
-
-
 function createDists() {
   fs.mkdir(projectPath, () => {
     console.log('project-dist folder was created');
